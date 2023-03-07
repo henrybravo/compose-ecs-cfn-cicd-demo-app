@@ -388,6 +388,11 @@ Resources:
              commands:
                - echo Convert Compose File
                - docker --debug compose convert > cloudformation.yml
+               - cat cloudformation.yml
+          post_build:
+            commands:
+               - echo Deploy cfn stack
+               - aws cloudformation create-stack --stack-name compose-application --template-body file://cloudformation.yml --capabilities CAPABILITY_IAM --on-failure DO_NOTHING
           artifacts:
             files:
               - cloudformation.yml
