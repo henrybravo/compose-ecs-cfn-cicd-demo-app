@@ -22,16 +22,18 @@ export AWS_DEFAULT_REGION=eu-central-1
 ```
 
 ```bash
+echo "alias l='ls -alrth'" >> .bashrc  
 sudo pip install --upgrade awscli && hash -r
 sudo apt update
 sudo apt install jq gettext bash-completion moreutils -y
-curl -L -o docker-linux-amd64.tar.gz https://github.com/docker/compose-cli/releases/download/v1.0.31/docker-linux-amd64.tar.gz tar xzf docker-linux-amd64.tar.gz
-chmod +x docker/docker
+curl -L -o docker-linux-amd64 https://github.com/docker/compose-cli/releases/download/v1.0.31/docker-linux-amd64
+mv docker-linux-amd64 docker
+chmod +x docker
 which docker
 sudo ln -s $(which docker) /usr/local/bin/com.docker.cli
 ./docker/docker —context default ps
-sudo mv docker/docker /usr/local/bin/docker
-docker version && docker compose
+sudo mv docker /usr/local/bin/docker
+docker version && docker compose version
 ```
 
 1. Allow inbound access into the Cloud9 instance by updating the EC2 instance SG. This is in order to test the app running 'locally' on the Cloud9 IDE with compose up
