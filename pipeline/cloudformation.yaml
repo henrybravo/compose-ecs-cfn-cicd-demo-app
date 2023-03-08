@@ -389,9 +389,9 @@ Resources:
                - echo Convert Compose File
                - docker --debug compose convert > cloudformation.yml
                - cat cloudformation.yml
-           artifacts:
-            files:
-              - cloudformation.yml
+          artifacts:
+             files:
+               - cloudformation.yml
 
   # Code Pipeline
   Pipeline:
