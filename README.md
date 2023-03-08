@@ -15,11 +15,13 @@ This repository also includes CloudFormation templates to:
 
 1. Prepare the Cloud9 env
 
-optional: set the default region
+optional: set the default region:
 
 ```bash
 export AWS_DEFAULT_REGION=eu-central-1
 ```
+
+Install requirements:
 
 ```bash
 echo "alias l='ls -alrth'" >> .bashrc  
