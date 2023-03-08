@@ -37,7 +37,7 @@ mv docker-linux-amd64 docker
 chmod +x docker
 which docker
 sudo ln -s $(which docker) /usr/local/bin/com.docker.cli
-./docker/docker —context default ps
+./docker context default ls
 sudo mv docker /usr/local/bin/docker
 docker version && docker compose version
 ```
