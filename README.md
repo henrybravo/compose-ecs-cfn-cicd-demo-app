@@ -24,7 +24,7 @@ export AWS_DEFAULT_REGION=eu-central-1
 Install requirements:
 
 ```bash
-echo "alias l='ls -alrth'" >> .bashrc  
+echo "alias l='ls -alrth'" >> ~/.bashrc  
 sudo pip install --upgrade awscli && hash -r
 sudo apt update
 sudo apt install jq gettext bash-completion moreutils -y
