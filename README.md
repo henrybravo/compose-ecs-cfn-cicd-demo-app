@@ -26,6 +26,10 @@ echo "alias l='ls -alrth'" >> .bashrc
 sudo pip install --upgrade awscli && hash -r
 sudo apt update
 sudo apt install jq gettext bash-completion moreutils -y
+```
+
+Install docker compose cli Option 1:
+```bash
 curl -L -o docker-linux-amd64 https://github.com/docker/compose-cli/releases/download/v1.0.31/docker-linux-amd64
 mv docker-linux-amd64 docker
 chmod +x docker
@@ -33,6 +37,12 @@ which docker
 sudo ln -s $(which docker) /usr/local/bin/com.docker.cli
 ./docker/docker —context default ps
 sudo mv docker /usr/local/bin/docker
+docker version && docker compose version
+```
+
+Install docker compose cli Option 2:
+```bash
+curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
 docker version && docker compose version
 ```
 
